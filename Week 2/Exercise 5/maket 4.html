@@ -1,0 +1,134 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 870px;
+    }
+
+    .main-info {    
+        float: left;
+        width: 400px;
+    }
+
+    .reklama {
+        float: right;
+        width: 350px;
+        margin-top: 90px;
+        padding: 30px;
+        border: 2px dotted navy;
+    }
+
+    .reviews {
+        width: 870px;
+        margin-left: 30px;
+        float: left;
+        clear: both;
+        margin-top: 30px;
+    }
+
+    .review {
+        border-left: 10px double navy;
+        width: 350px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .name-posittitel {
+        color: firebrick;
+        border-bottom: 1px dotted firebrick;
+        display: inline-block;
+        padding-bottom: 3px;
+        margin-bottom: 5px;
+    }
+
+    h1 {
+        color: rgb(123, 56, 218);
+    }
+
+    h3 {
+        color: rgb(1, 1, 119);
+    }
+
+    .special-offer {
+        color: blue;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: blue;
+    }
+
+    .name-posittitel::before {
+        content: "";
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-image: url('https://static.wixstatic.com/media/95bafa_d41f64f1081a4a0da05350c55c5daeac~mv2.jpg/v1/fill/w_45,h_45,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/telgram.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .review::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 35px;
+        background-image: url('https://cdn-icons-png.flaticon.com/512/889/889140.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 10px;
+        transition: border-bottom 0.3s;
+    }
+
+    .review::after:hover {
+        border-bottom: 3px dotted goldenrod;
+        cursor: pointer;
+    }
+
+    .review:hover::after {
+        border-bottom: 3px dotted goldenrod;
+        cursor: pointer;
+    }
+</style>
+
+<html>
+<body>
+    <div class="container">
+        <section class="main-info">
+            <h1 style="margin-bottom: 30px;">Зоопарк редких животных</h1>
+            
+            <h3>Более 150 видов</h3>
+
+            <p>Вы увидите крупных диких представителей живой природы, а также редких птиц, змей и многое другое!</p>
+            <img style="margin-bottom: 50px;" src="https://avatars.mds.yandex.net/i?id=cb5466b8234a2db804b707db4ad4ff11_l-5228318-images-thumbs&n=13" width="400px" height="250px">
+        </section>
+        
+        <div class="reklama">
+            <h3>Внимание! Специальное предложение от партнёра!</h3>
+            <p><span class="special-offer">Щенки хаски</span> от заводчика со всеми документами</p>
+            <img src="https://sun9-3.userapi.com/impg/YjlXlxrh1O0wZ75AtVBpENlf8zXefWcbg92C-Q/rHLdx0M9TmA.jpg?size=1280x851&quality=96&sign=972be0aef3a47946d019b276bf1640e9&type=album" width="150px" height="80px">
+            <img src="https://avatars.mds.yandex.net/i?id=8e91c0c8b5185cc77e3b6c3afee74917_l-4855057-images-thumbs&n=13" width="150px" height="80px">
+        </div>
+        
+        <div class="reviews">
+            <div class="review">
+                <div class="name-posittitel">Олег</div>
+                <p class="review-text">Был в серпентарии. Ребёнок в восторге!</p>
+            </div>
+            
+            <div class="review">
+                <div class="name-posittitel">Наталья</div>
+                <p class="review-text">Спасибо за экскурсию! Очень интересно!</p>
+            </div>
+            
+            <div class="review">
+                <div class="name-posittitel">Анна</div>
+                <p class="review-text">Так и не попали к птицам. жаль... Однако, остальное очень здорово!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
