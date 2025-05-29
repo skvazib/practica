@@ -1,0 +1,98 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .container {
+        display: flex;
+        align-items: flex-start; 
+        justify-content: center; 
+        width: 100%;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 300px; 
+    }
+
+    .gallery img {
+        width: 100px;
+        height: auto;
+        transition: all 0.3s ease;
+    }
+
+    .gallery img:hover {
+        opacity: 1;
+        margin: 20px; 
+        border: 3px solid navy; 
+    }
+
+    .text {
+        margin-left: 20px; 
+        max-width: 200px;
+        text-align: right;
+    }
+
+    .text p {
+        font-size: 45px;
+        transition: color 0.3s ease; 
+    }
+
+    .text p.right:hover {
+        color: darkorange; 
+    }
+
+    .italic-text {
+        font-style: italic;
+    }
+
+    nav {
+        border-bottom: 2px dotted black;
+        text-align: right;
+        height: 30px;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    p {
+        color: rgb(188, 210, 223);
+    }
+</style>
+
+<html>
+    <nav>
+        <a style="text-decoration: none; margin-right: 40px; color: rgb(146, 140, 194);" href="#">Сезонные акции</a>
+        <a style="text-decoration: none; margin-right: 20px; color: rgb(146, 140, 194);" href="#">Контакты</a>
+    </nav>
+
+    <h1>Горные экскурсии</h1>
+
+    <div class="container">
+        <div class="gallery">
+            <img src="https://i.pinimg.com/736x/8c/4c/68/8c4c682c23a8ec75f974dd9cb6856837.jpg" alt="Гора 1">
+            <img src="https://avatars.yandex.net/get-music-content/5236179/f94f2111.a.17702915-1/m1000x1000?webp=false" alt="Гора 2">
+            <img src="https://p3.pikrepo.com/preview/885/829/mountains-clouds-weather-storm-nature-landscape-outdoors-travel-trip-adventure.jpg" alt="Гора 3"> 
+            <img src="https://agapovsky.ru/wp-content/uploads/2024/06/img14.jpg" alt="Гора 4">
+            <img src="https://avatars.mds.yandex.net/i?id=60b1f34704fbcccfe62771ddbba830bb_l-5858863-images-thumbs&n=13" alt="Гора 5">
+            <img src="https://i.pinimg.com/736x/cd/29/c9/cd29c99b02d5d2547115baa3626117e9.jpg" alt="Гора 6">
+        </div>
+
+        <div class="text">
+            <p>Только</p>
+
+            <p style = "margin-left: 200px;" class="right"><span class="italic-text">горы!</span></p>
+
+            <p>Только</p>
+
+            <p style="margin-left: 200px;" class="right"><span class="italic-text">вперед!</span></p>
+        </div>
+    </div>
+</html>
