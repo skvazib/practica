@@ -1,0 +1,295 @@
+<!-- Стили -->
+<style>
+    body.dark {
+        background-color: black;
+        color: white;
+        transition: background-color 1s, color 1s;
+    }
+
+    body.light {
+        background-color: white;
+        color: black;
+        transition: background-color 1s, color 1s;
+    }
+
+    header {
+        background: rgb(29, 28, 28);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-grow: 1;
+    }
+
+    header img {
+        width: 70px;
+        height: 70px;
+    }
+
+    a {
+        color: blueviolet;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    h1 {
+        color: rgb(46, 119, 165);
+        margin-top: 20px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .contests-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .contest-card {
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(72, 82, 116)
+    }
+
+    .contest-image-container {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .contest-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .contest-content {
+        padding: 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contest-title {
+        margin: 0 0 10px 0;
+        color: rgb(165, 189, 30);
+        font-size: 1.3rem;
+    }
+
+    .contest-description {
+        margin: 0 0 15px 0;
+        flex-grow: 1;
+        color: white;
+    }
+
+    .contest-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .participants-count {
+        font-weight: bold;
+        margin-right: 10px;
+        color: white;
+    }
+
+    .contest-rating {
+        color: gold;
+        font-size: 18px;
+    }
+
+    .participate-button {
+        background-color: rgb(46, 119, 165);
+        color: white;
+        padding: 8px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    .participate-button:hover {
+        background-color: rgb(35, 95, 130);
+    }
+
+    .testimonial {
+        color: white;
+    }
+</style>
+
+<html>
+<body class="dark">
+    <!--Шапка сайта-->
+    <header>
+        <div class="header-content">
+            <img src="https://media.istockphoto.com/id/1423318816/ru/векторная/планетарий-изолирован-мультяшной-векторной-иллюстрацией.jpg?s=612x612&w=0&k=20&c=LsT95UwueO3YU82fqmXmP3gf7BZvq8bmlpHLu5W0PzI=">
+
+            <div>
+                <h1>Описание конкурсов</h1>
+                <a href="index.html">Вернутся на главную</a>
+            </div>
+        </div>
+        <a href="#" id="theme-toggle">Включить светлую тему</a>
+    </header>
+
+    <div class="contests-container">
+        <!-- Карточка 1 -->
+        <div class="contest-card">
+            <div class="contest-image-container">
+                <img src="https://cs1.livemaster.ru/storage/7a/4f/567d3351a8eda2827ea60022ff3k--podarki-k-prazdnikam-albom-vyshe-k-zvezdam.jpg" 
+                     class="contest-image" alt="Космическая семейная история">
+            </div>
+            <div class="contest-content">
+                <h3 class="contest-title">Космическая семейная история</h3>
+                <p class="contest-description">Расскажите историю вашей семьи как увлекательное космическое путешествие. Опишите важные события в жизни вашей семьи через призму космической метафоры.</p>
+                
+                <div class="contest-info">
+                    <div>
+                        <span class="participants-count">Участников: 124</span>
+                        <div class="contest-rating">
+                            ★★★★☆
+                        </div>
+                    </div>
+                    <a href="account.html" class="participate-button">Участвовать</a>
+                </div>
+                
+                <div class="testimonial">
+                    "Прекрасный конкурс, который позволил нашей семье по-новому взглянуть на нашу историю!" - Семья Ивановых
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карточка 2 -->
+        <div class="contest-card">
+            <div class="contest-image-container">
+                <img src="https://masterpiecer-images.s3.yandex.net/6401b1f19e6911eebaa5b2cc7fc5ac6b:upscaled" 
+                     class="contest-image" alt="Семейный космический корабль">
+            </div>
+            <div class="contest-content">
+                <h3 class="contest-title">Семейный космический корабль</h3>
+                <p class="contest-description">Создайте макет или рисунок космического корабля для вашей семьи. Проявите фантазию - каким бы был ваш семейный звездолет?</p>
+                
+                <div class="contest-info">
+                    <div>
+                        <span class="participants-count">Участников: 89</span>
+                        <div class="contest-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <a href="account.html" class="participate-button">Участвовать</a>
+                </div>
+                
+                <div class="testimonial">
+                    "Мы с детьми провели незабываемый вечер, проектируя наш семейный корабль!" - Семья Петровых
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карточка 3 -->
+        <div class="contest-card">
+            <div class="contest-image-container">
+                <img src="https://avatars.dzeninfra.ru/get-zen_doc/9828307/pub_64d38bb5557c7928fd5f5eb2_64d38be86ae08345525672e6/scale_1200" 
+                     class="contest-image" alt="Семейные созвездия">
+            </div>
+            <div class="contest-content">
+                <h3 class="contest-title">Семейные созвездия</h3>
+                <p class="contest-description">Придумайте и изобразите созвездие, которое символизирует вашу семью. Каждая звезда - член семьи, а вместе вы образуете уникальное созвездие!</p>
+                
+                <div class="contest-info">
+                    <div>
+                        <span class="participants-count">Участников: 76</span>
+                        <div class="contest-rating">
+                            ★★★★☆
+                        </div>
+                    </div>
+                    <a href="account.html" class="participate-button">Участвовать</a>
+                </div>
+                
+                <div class="testimonial">
+                    "Теперь мы знаем, как выглядит наше семейное созвездие! Очень трогательный конкурс." - Семья Сидоровых
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карточка 4 -->
+        <div class="contest-card">
+            <div class="contest-image-container">
+                <img src="https://img.freepik.com/free-photo/astronaut-playing-guitar-space_23-2149191304.jpg" 
+                     class="contest-image" alt="Космический талант">
+            </div>
+            <div class="contest-content">
+                <h3 class="contest-title">Космический талант</h3>
+                <p class="contest-description">Продемонстрируйте творческие таланты вашей семьи в космическом стиле: пение, танцы, декламация стихов или игра на музыкальных инструментах.</p>
+                
+                <div class="contest-info">
+                    <div>
+                        <span class="participants-count">Участников: 112</span>
+                        <div class="contest-rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <a href="account.html" class="participate-button">Участвовать</a>
+                </div>
+                
+                <div class="testimonial">
+                    "Наш сын впервые выступил перед публикой с космическим стихотворением - это было незабываемо!" - Семья Козловых
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карточка 5 -->
+        <div class="contest-card">
+            <div class="contest-image-container">
+                <img src="https://img.freepik.com/free-photo/astronaut-floating-space-with-planet-earth-background_23-2149191306.jpg" 
+                     class="contest-image" alt="Космическая фотография">
+            </div>
+            <div class="contest-content">
+                <h3 class="contest-title">Космическая фотография</h3>
+                <p class="contest-description">Создайте фотоколлаж вашей семьи в космическом стиле. Используйте реквизит, костюмы и фоторедакторы для создания космического антуража.</p>
+                
+                <div class="contest-info">
+                    <div>
+                        <span class="participants-count">Участников: 134</span>
+                        <div class="contest-rating">
+                            ★★★★☆
+                        </div>
+                    </div>
+                    <a href="account.html" class="participate-button">Участвовать</a>
+                </div>
+                
+                <div class="testimonial">
+                    "Наши космические семейные фото теперь украшают всю квартиру!" - Семья Смирновых
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Скрипты-->
+<script>
+    /* Скрипт для переключения темы */
+    const themeToggle = document.getElementById('theme-toggle');
+
+    themeToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isDark = document.body.classList.toggle('dark');
+        document.body.classList.toggle('light');
+            
+        themeToggle.textContent = isDark ? 'Включить светлую тему' : 'Включить темную тему';
+    });
+</script>
+</body>
+</html>

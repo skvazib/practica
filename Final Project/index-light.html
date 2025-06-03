@@ -1,0 +1,732 @@
+<!-- Стили -->
+<style>
+    body.dark {
+        background-color: black;
+        color: white;
+        transition: background-color 1s, color 1s;
+    }
+
+    body.light {
+        background-color: white;
+        color: black;
+        transition: background-color 1s, color 1s;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    header {
+        background: rgb(159, 171, 206);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-grow: 1;
+    }
+
+    header img {
+        width: 70px;
+        height: 70px;
+    }
+
+    h1 {
+        color: rgb(140, 0, 255);
+        margin-top: 20px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .slider-container {
+        width: 900px;
+        margin: 30px auto;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .slider {
+        display: flex;
+        width: 300%;
+    }
+
+    .slide {
+        width: 33.333%;
+        padding: 20px;
+        box-sizing: border-box;
+        background: rgb(107, 125, 187);
+        text-align: center;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .slide h3 {
+        color: rgb(165, 189, 30);
+        margin: 15px 0;
+    }
+
+    .slide p {
+        margin-bottom: 20px;
+        line-height: 1.5;
+        color: white;
+    }
+
+    .rating {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .star {
+        color: gold;
+        font-size: 24px;
+        margin: 0 2px;
+    }
+
+    .slider-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 100px;
+    }
+
+    .slider-nav span {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ccc;
+        margin: 0 5px;
+    }
+
+    .slider-nav span.active {
+        background: blueviolet;
+    }
+
+    .authentication-container {
+        width: 840px;
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+        padding: 30px;
+        background: rgb(107, 125, 187);
+        border-radius: 10px;
+        margin-bottom: 100px;
+    }
+
+    .auth-group {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .auth-button {
+        width: 100%;
+        padding: 12px;
+        background-color: blueviolet;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+
+    .about-conteiner {
+        width: 860px;
+        margin: 50px auto;
+        background: rgb(107, 125, 187);
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 100px;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-text {
+        color: white;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .about-image {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .greeting-container {
+        width: 860px;
+        margin: 50px auto;
+        background: rgb(107, 125, 187);
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 100px;
+    }
+
+    .greeting-video {
+        width: 100%;
+        height: 450px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        background-color: #333;
+    }
+
+    .greeting-text {
+        color: white;
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .contests-container {
+        width: 900px;
+        margin: 50px auto 100px;
+        background-color: rgb(127, 148, 224);
+        border-radius: 10px;
+    }
+    
+    .contests-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+    
+    .contest-cell {
+        width: 33.33%;
+        padding: 15px;
+        vertical-align: top;
+    }
+    
+    .contest-card {
+        background: rgb(107, 125, 187);
+        border-radius: 10px;
+        padding: 15px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 450px;
+    }
+    
+    .contest-image-container {
+        height: 180px;
+        border-radius: 8px;
+    }
+    
+    .contest-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .contest-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contest-title {
+        color: rgb(165, 189, 30);
+        margin: 10px;
+        font-size: 20px;
+        min-height: 40px;
+    }
+    
+    .contest-description {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 14px;
+        flex-grow: 1;
+        font-size: 15px;
+    }
+    
+    .contest-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+    
+    .participants-count {
+        color: white;
+        font-size: 13px;
+    }
+    
+    .participate-button {
+        background-color: blueviolet;
+        color: white;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 8px 15px;
+        display: inline-block;
+    }
+
+    .search-container {
+        width: 900px;
+        margin: 20px auto 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .quick-search-form {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .quick-search-form input[type="text"] {
+        padding: 6px 10px;
+        border-radius: 5px;
+        border: 1px solid black;
+        font-size: 14px;
+        width: 250px;
+    }
+
+    .reviews-section {
+        width: 900px;
+        margin: 50px auto 50px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .review-slide {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background: rgb(107, 125, 187);
+        border-radius: 10px;
+    }
+    
+    .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .review-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        border: 2px solid rgb(165, 189, 30);
+    }
+    
+    .review-author {
+        color: rgb(165, 189, 30);
+        font-size: 18px;
+        margin: 0;
+    }
+    
+    .review-date {
+        color: #ccc;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+    .review-text {
+        color: white;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        min-height: 100px;
+    }
+    
+    .review-link {
+        display: inline-block;
+        background-color: blueviolet;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    
+    .reviews-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .review-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ccc;
+        margin: 0 5px;
+    }
+</style>
+
+<html>
+<body class="light">
+    <!--Шапка сайта-->
+    <header>
+        <div class="header-content">
+            <img src="https://media.istockphoto.com/id/1423318816/ru/векторная/планетарий-изолирован-мультяшной-векторной-иллюстрацией.jpg?s=612x612&w=0&k=20&c=LsT95UwueO3YU82fqmXmP3gf7BZvq8bmlpHLu5W0PzI=">
+            <h1>Моя семья - мой космос</h1>
+        </div>
+
+        <a href="registration.html">Регистрация</a>
+        <a href="#atentificacia">Авторизация</a>
+        <a href="account.html">Личный кабинет</a>
+        <a href="#about">О нас</a>
+        <a href="#concurs">Конкурсы</a>
+        <a href="#poisk">Поиск</a>
+        <a href="#contact">Контакты</a>
+        <a href="#" id="theme-toggle">Включить темную тему</a>
+    </header>
+
+<h1>Популярные конкурсы</h1>
+
+<!-- Слайдер с конкурсами -->
+<div class="slider-container">
+    <div class="slider" style="transform: translateX(0);">
+        <div class="slide">
+            <img src="https://cs1.livemaster.ru/storage/7a/4f/567d3351a8eda2827ea60022ff3k--podarki-k-prazdnikam-albom-vyshe-k-zvezdam.jpg">
+            <h3>Космическая семейная история</h3>
+            <p>Расскажите историю вашей семьи как увлекательное космическое путешествие.</p>
+            <div class="rating">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">☆</span>
+                <span style="color: white;">(4.2)</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="slider-nav">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Блок "Авторизация" -->
+<h1 id="atentificacia">Авторизация</h1>
+<div class="authentication-container">
+    <div>
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; color: white;">Электронная почта:</label>
+            <input type="email" class="auth-group" placeholder="Введите email">
+        </div>
+        
+        <div style="margin-bottom: 25px;">
+            <label style="display: block; margin-bottom: 8px; color: white;">Пароль:</label>
+            <input type="password" class="auth-group" placeholder="Введите пароль">
+        </div>
+        
+        <button class="auth-button">Войти</button>
+        
+        <div style="text-align: center; margin-top: 15px;">
+            <a href="#" onclick="return false;" style="color: white; text-decoration: none;">Забыли пароль?</a>
+        </div>
+    </div>
+</div>
+
+<!--Блок "О нас" -->
+<h1 id="about">О нас</h1>
+<div class="about-conteiner">
+    <img class="about-image" src="https://avatars.mds.yandex.net/get-altay/4352895/2a0000017bbc799c83b013d223e639b28bf5/XXL_height">
+    <div class="about-text">
+        <p>Добро пожаловать на сайт "Моя семья - мой космос" - уникальную платформу, где семьи могут делиться своими историями, участвовать в увлекательных конкурсах и создавать незабываемые воспоминания.</p>
+        <p>Наша миссия - помочь семьям укрепить свои связи через творчество и совместную деятельность. Мы верим, что каждая семья уникальна, как звезда во Вселенной, и заслуживает того, чтобы ее история была услышана.</p>
+        <p>Присоединяйтесь к нашему сообществу, участвуйте в конкурсах, вдохновляйтесь историями других семей и создавайте свои собственные космические приключения!</p>
+    </div>
+</div>
+
+<h1>Приветствие от организаторов</h1>
+<div class="greeting-container">
+    <div class="greeting-video">
+        <iframe width="100%" height="100%" src="https://www.shutterstock.com/shutterstock/videos/3426043895/preview/stock-footage-business-meeting-man-and-open-door-by-office-and-welcome-to-company-for-client-consultation.webm"></iframe>
+    </div>
+    <div class="greeting-text">
+        <p>Дорогие друзья и участники проекта "Моя семья - мой космос"!</p>
+        <p>Мы рады приветствовать вас на нашем сайте и подготовили для вас видео с приветствием.</p>
+    </div>
+</div>
+
+<!-- Блок "Конкурсы" -->
+<h1 id="concurs">Конкурсы</h1>
+
+<!-- Поле поиска -->
+<div id="poisk" class="search-container">
+    <div class="quick-search-form">
+        <input type="text" placeholder="Поиск конкурсов...">
+        <button>Поиск</button>
+    </div>
+</div>
+
+<div class="contests-container">
+    <table class="contests-table">
+        <tr>
+            <!-- Карточка 1 -->
+            <td class="contest-cell">
+                <div class="contest-card">
+                    <div class="contest-image-container">
+                        <img src="https://cs1.livemaster.ru/storage/7a/4f/567d3351a8eda2827ea60022ff3k--podarki-k-prazdnikam-albom-vyshe-k-zvezdam.jpg" 
+                             class="contest-image">
+                    </div>
+                    <div class="contest-content">
+                        <h3 class="contest-title">Космическая семейная история</h3>
+                        <p class="contest-description">Расскажите историю вашей семьи как увлекательное космическое путешествие.</p>
+                        <div class="contest-info">
+                            <div>
+                                <span class="participants-count">Участников: 124</span>
+                                <div class="contest-rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">☆</span>
+                                </div>
+                            </div>
+                            <a href="competition.html" class="participate-button">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+            <!-- Карточка 2 -->
+            <td class="contest-cell">
+                <div class="contest-card">
+                    <div class="contest-image-container">
+                        <img src="https://masterpiecer-images.s3.yandex.net/6401b1f19e6911eebaa5b2cc7fc5ac6b:upscaled" 
+                             class="contest-image">
+                    </div>
+                    <div class="contest-content">
+                        <h3 class="contest-title">Семейный космический корабль</h3>
+                        <p class="contest-description">Создайте макет или рисунок космического корабля для вашей семьи. Проявите фантазию - каким бы был ваш семейный звездолет?</p>
+                        <div class="contest-info">
+                            <div>
+                                <span class="participants-count">Участников: 89</span>
+                                <div class="contest-rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <a href="competition.html" class="participate-button">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+            <!-- Карточка 3 -->
+            <td class="contest-cell">
+                <div class="contest-card">
+                    <div class="contest-image-container">
+                        <img src="https://avatars.dzeninfra.ru/get-zen_doc/9828307/pub_64d38bb5557c7928fd5f5eb2_64d38be86ae08345525672e6/scale_1200" 
+                             class="contest-image">
+                    </div>
+                    <div class="contest-content">
+                        <h3 class="contest-title">Семейные созвездия</h3>
+                        <p class="contest-description">Придумайте и изобразите созвездие, которое символизирует вашу семью. Каждая звезда - член семьи, а вместе вы образуете уникальное созвездие!</p>
+                        <div class="contest-info">
+                            <div>
+                                <span class="participants-count">Участников: 76</span>
+                                <div class="contest-rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">☆</span>
+                                </div>
+                            </div>
+                            <a href="competition.html" class="participate-button">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <!-- Карточка 4 -->
+            <td class="contest-cell">
+                <div class="contest-card">
+                    <div class="contest-image-container">
+                        <img src="https://img.freepik.com/free-photo/astronaut-playing-guitar-space_23-2149191304.jpg" 
+                             class="contest-image">
+                    </div>
+                    <div class="contest-content">
+                        <h3 class="contest-title">Космический талант</h3>
+                        <p class="contest-description">Продемонстрируйте творческие таланты вашей семьи в космическом стиле.</p>
+                        <div class="contest-info">
+                            <div>
+                                <span class="participants-count">Участников: 112</span>
+                                <div class="contest-rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                </div>
+                            </div>
+                            <a href="competition.html" class="participate-button">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            
+            <!-- Карточка 5 -->
+            <td class="contest-cell">
+                <div class="contest-card">
+                    <div class="contest-image-container">
+                        <img src="https://img.freepik.com/free-photo/astronaut-floating-space-with-planet-earth-background_23-2149191306.jpg" 
+                             class="contest-image">
+                    </div>
+                    <div class="contest-content">
+                        <h3 class="contest-title">Космическая фотография</h3>
+                        <p class="contest-description">Создайте фотоколлаж вашей семьи в космическом стиле.</p>
+                        <div class="contest-info">
+                            <div>
+                                <span class="participants-count">Участников: 134</span>
+                                <div class="contest-rating">
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">★</span>
+                                    <span class="star">☆</span>
+                                </div>
+                            </div>
+                            <a href="competition.html" class="participate-button">Записаться</a>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="contest-cell"></td>
+        </tr>
+        <a style="font-size: 20px;" href="schedule.html">Расписание</a>
+        <a style="font-size: 20px;" href="competition.html">Описание конкурсов</a>
+    </table>
+</div>
+
+<!-- Блок отзывов -->
+<h1>Отзывы участников</h1>
+<div class="reviews-section">    
+    <div class="reviews-slider" style="transform: translateX(0);">
+        <div class="review-slide">
+            <div class="review-header">
+                <img src="https://img.wprost.pl/img/twarz-wygenerowana-komputerowo/f9/0b/85f2fd78a665a26f596819730671.jpeg" class="review-avatar">
+                <div>
+                    <h3 class="review-author">Анна Смирнова</h3>
+                    <div class="review-date">15 мая 2025</div>
+                </div>
+            </div>
+            <p class="review-text">
+                Участвовали всей семьей в конкурсе "Космическая история". Это было незабываемо! Дети в восторге от процесса создания нашей семейной саги. Организация на высшем уровне, спасибо за такой прекрасный опыт!
+            </p>
+            <a href="#" onclick="return false;" class="review-link">Посмотреть конкурсы</a>
+        </div>
+    </div>
+    
+    <div class="slider-nav">
+        <span class="review-dot active"></span>
+        <span class="review-dot"></span>
+        <span class="review-dot"></span>
+    </div>
+</div>
+
+<!-- Блок подписки на новости -->
+<h1>Подписаться на новости</h1>
+<div class="authentication-container">
+    <div style="margin-top: 20px;">
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; margin-bottom: 8px; color: white;">Email*:</label>
+            <input type="email" class="auth-group" placeholder="Введите email">
+        </div>
+        
+        <div style="display: flex; align-items: center; margin-bottom: 25px;">
+            <input type="checkbox" style="margin-right: 10px; width: auto;">
+            <span style="color: white; font-size: 14px;">
+                Я согласен(а) на обработку персональных данных*
+            </span>
+        </div>
+        
+        <button class="auth-button">Подписаться</button>
+    </div>
+</div>
+
+<!-- Подвал сайта -->
+<footer style="background: rgb(159, 171, 206); padding: 30px 0; margin-top: 50px;">
+    <div style="max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <!-- Контактная информация -->
+        <div style="margin-bottom: 20px;">
+            <h3 id="contact" style="color: rgb(140, 0, 255); margin-bottom: 15px;">Контакты</h3>
+            <p style="color: white; margin: 8px 0;">
+                Телефон: <a href="#" onclick="return false;" style="color: blue;">+7 (4842) 23-45-67</a>
+            </p>
+            <p style="color: white; margin: 8px 0;">
+                Email: <a href="mailto:family@cosmos.ru" style="color: blue;">family@cosmos.ru</a>
+            </p>
+        </div>
+        
+        <!-- Навигация -->
+        <div style="margin-bottom: 20px;">
+            <h3 style="color: rgb(140, 0, 255); margin-bottom: 15px;">Навигация</h3>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 8px;">
+                    <a href="#" style="color: blue; text-align: center;">Главная</a>
+                </li>
+                <li style="margin-bottom: 8px;">
+                    <a href="registration.html" style="color: blue;">Регистрация</a>
+                </li>
+                <li style="margin-bottom: 8px;">
+                    <a href="#concurs" style="color: blue;">Конкурс</a>
+                </li>
+                <li style="margin-bottom: 8px;">
+                    <a href="account.html" style="color: blue;">Личный кабинет</a>
+                </li>
+                <li style="margin-bottom: 8px;">
+                    <a href="404.html" style="color: blue;">Страница не найдена</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px; color: white; font-size: 16px;">
+        © 2025 "Моя семья - мой космос".
+    </div>
+</footer>
+
+<!--Скрипты-->
+<script>
+    /* Скрипт для переключения темы */
+    const themeToggle = document.getElementById('theme-toggle');
+
+    themeToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isDark = document.body.classList.toggle('dark');
+        document.body.classList.toggle('light');
+            
+        themeToggle.textContent = isDark ? 'Включить светлую тему' : 'Включить темную тему';
+    });
+</script>
+</body>
+</html>

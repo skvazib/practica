@@ -1,0 +1,171 @@
+<!-- Стили -->
+<style>
+    body.dark {
+        background-color: black;
+        color: white;
+        transition: background-color 1s, color 1s;
+    }
+
+    body.light {
+        background-color: white;
+        color: black;
+        transition: background-color 1s, color 1s;
+    }
+
+    header {
+        background: rgb(29, 28, 28);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-grow: 1;
+    }
+
+    header img {
+        width: 70px;
+        height: 70px;
+    }
+
+    a {
+        color: blueviolet;
+        text-decoration: none;
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    h1 {
+        color: rgb(46, 119, 165);
+        margin-top: 20px;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        border-radius: 8px;
+        background-color: rgb(72, 82, 116);
+        color: white;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    select, input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background-color: rgb(46, 119, 165);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: rgb(35, 95, 130);
+    }
+</style>
+
+<html>
+<body class="dark">
+    <!--Шапка сайта-->
+    <header>
+        <div class="header-content">
+            <img src="https://media.istockphoto.com/id/1423318816/ru/векторная/планетарий-изолирован-мультяшной-векторной-иллюстрацией.jpg?s=612x612&w=0&k=20&c=LsT95UwueO3YU82fqmXmP3gf7BZvq8bmlpHLu5W0PzI=">
+
+            <div>
+                <h1>Личный кабинет</h1>
+                <a href="index.html">Вернутся на главную</a>
+            </div>
+        </div>
+        <a href="#" onclick="return false;">Выйти из профиля</a>
+        <a href="#" id="theme-toggle">Включить светлую тему</a>
+    </header>
+
+    <div class="container">
+        <h2>Запись на конкурс</h2>
+        
+        <form>
+            <div class="form-group">
+                <label for="contest">Выберите конкурс:</label>
+                <select id="contest">
+                    <option value="" disabled selected>-- Выберите конкурс --</option>
+                    <option value="Космическая семейная история">Космическая семейная история</option>
+                    <option value="Семейный космический корабль">Семейный космический корабль</option>
+                    <option value="Семейные созвездия">Семейные созвездия</option>
+                    <option value="Космический талант">Космический талант</option>
+                    <option value="Космическая фотография">Космическая фотография</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Дата:</label>
+                <input type="text">
+            </div>
+            
+            <div class="form-group">
+                <label>Выберите время (с 10:00 до 18:00):</label>
+                <select>
+                    <option value="" disabled selected>-- Выберите время --</option>
+                    <option value="10:00-11:00">10:00-11:00</option>
+                    <option value="11:00-12:00">11:00-12:00</option>
+                    <option value="12:00-13:00">12:00-13:00</option>
+                    <option value="13:00-14:00">13:00-14:00</option>
+                    <option value="14:00-15:00">14:00-15:00</option>
+                    <option value="15:00-16:00">15:00-16:00</option>
+                    <option value="16:00-17:00">16:00-17:00</option>
+                    <option value="17:00-18:00">17:00-18:00</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Количество участников:</label>
+                <input type="number">
+            </div>
+            
+            <button onclick="return false;" type="submit">Записаться на конкурс</button>
+        </form>
+    </div>
+
+<!--Скрипты-->
+<script>
+    /* Скрипт для переключения темы */
+    const themeToggle = document.getElementById('theme-toggle');
+
+    themeToggle.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isDark = document.body.classList.toggle('dark');
+        document.body.classList.toggle('light');
+            
+        themeToggle.textContent = isDark ? 'Включить светлую тему' : 'Включить темную тему';
+    });
+</script>
+</body>
+</html>
